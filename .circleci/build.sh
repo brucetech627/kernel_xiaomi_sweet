@@ -5,7 +5,6 @@ git clone --depth=1 https://github.com/stormbreaker-project/AnyKernel3 -b sweet 
 echo "Done"
 TANGGAL=$(date +"%F-%S")
 START=$(date +"%s")
-UPLOAD_FILE=$(Sweet-StormBreaker-V2-${TANGGAL}.zip)
 export CONFIG_PATH=$PWD/arch/arm64/configs/sweet_user_defconfig
 PATH="${PWD}/clang/bin:$PATH"
 export ARCH=arm64
@@ -54,10 +53,9 @@ function compile() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 ${UPLOAD_FILE) *
-    curl --upload-file ./${UPLOAD_FILE) https://transfer.sh/${UPLOAD_FILE)
+    zip -r9 Sweet-StormBreaker-V2-${TANGGAL}.zip *
+    curl --upload-file ./Sweet-StormBreaker-V2-${TANGGAL}.zip https://transfer.sh/Sweet-StormBreaker-V2-${TANGGAL}.zip
     cd ..
-    
 }
 sendinfo
 compile
