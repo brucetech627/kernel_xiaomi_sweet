@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "Cloning dependencies"
+echo "Cloning needed repos"
 git clone --depth=1 -b master https://github.com/MASTERGUY/proton-clang clang
 git clone --depth=1 https://github.com/stormbreaker-project/AnyKernel3 -b sweet AnyKernel
 echo "Done"
